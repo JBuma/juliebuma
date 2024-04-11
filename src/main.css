@@ -1,7 +1,7 @@
-@import url("./reset.css");
-@import url("./sizing.css");
-@import url("./colours.css");
-@import url("./form.css");
+@import url("./styles/reset.css");
+@import url("./styles/sizing.css");
+@import url("./styles/colours.css");
+@import url("./styles/form.css");
 
 @font-face {
     font-family: InstrumentSerif;
@@ -17,7 +17,7 @@ body {
   font-family: Helvetica, Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100dvh;
   justify-content: space-between;
 }
 h1,
