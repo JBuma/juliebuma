@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: InstrumentSerif;
-    src: url(./InstrumentSerif-Regular.otf);
+    src: url(../public/InstrumentSerif-Regular.otf);
 }
 
 html {
