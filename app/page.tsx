@@ -1,9 +1,14 @@
 export default function Page() {
   async function onSubmit(data: FormData) {
     "use server";
+    if (data.get("notforhuman") !== "") {
+      return;
+    }
+
     const name = data.get("name");
     const message = data.get("contact-message");
     const email = data.get("email");
+    
     const api_key = process.env.RESEND_KEY;
 
     const input = {
@@ -72,6 +77,16 @@ export default function Page() {
             rows={3}
             placeholder="Message"
           ></textarea>
+        </div>
+
+        <div hidden>
+          <label htmlFor="notforhuman">Don't fill this in</label>
+          <input
+            id="notforhuman"
+            type="text"
+            name="notforhuman"
+            placeholder="do not fill"
+          />
         </div>
 
         <input type="submit" value="Send" />
