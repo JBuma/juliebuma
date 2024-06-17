@@ -1,6 +1,6 @@
-import { PostsQuerySdk } from "../../../src/lib/__generated/sdk";
 import { ProjectCard } from "./ProjectCard";
 import { graphQLClient } from "../../../src/lib/client";
+import { getSdk } from "../../../src/lib/__generated/sdk";
 
 interface ProjectListProps {
   search?: string;
@@ -11,7 +11,7 @@ export async function ProjectList({
   search = "",
   limit = 3,
 }: ProjectListProps) {
-  const projects = await PostsQuerySdk(graphQLClient).Posts();
+  const projects = await getSdk(graphQLClient).Posts();
 
   return (
     <>
