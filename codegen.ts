@@ -1,6 +1,6 @@
 import { CodegenConfig } from "@graphql-codegen/cli";
 
-require("dotenv").config({ path: ".env.local" });
+require("dotenv").config();
 
 console.log(process.env.CONTENTFUL_KEY);
 
