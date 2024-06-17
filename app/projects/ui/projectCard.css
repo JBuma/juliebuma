@@ -1,7 +1,7 @@
 .project-card {
   &.wrapper {
     display: grid;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: minmax(auto, 3fr) 2fr;
     @media (min-width: 800px) {
       grid-template-rows: minmax(75px, 1fr) auto 1fr var(--size-medium);
       grid-template-areas:
@@ -12,7 +12,7 @@
       gap: var(--size-small);
 
       &:nth-child(2n) {
-        grid-template-columns: 2fr 3fr;
+        grid-template-columns: 2fr minmax(auto, 3fr);
 
         grid-template-areas:
           ". image"
@@ -33,10 +33,11 @@
       }
     }
     /* height: 30vh; */
-    max-height: 400px;
+    /* max-height: 400px; */
   }
 
   .title {
+    font-family: var(--font-header);
     font-size: var(--size-large);
     grid-area: title;
   }
@@ -57,6 +58,7 @@
     background-position: center;
 
     border-radius: var(--size-small);
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: var(--shadow);
+    aspect-ratio: 2/1;
   }
 }

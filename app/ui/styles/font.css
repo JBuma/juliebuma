@@ -1,0 +1,5 @@
+:root {
+  --font-header: InstrumentSerif, Cambria, Cochin, Georgia, Times,
+    "Times New Roman", serif;
+  --font-default: Helvetica, Verdana, Geneva, Tahoma, sans-serif;
+}

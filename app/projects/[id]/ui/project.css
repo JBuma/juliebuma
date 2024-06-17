@@ -1,0 +1,10 @@
+#project-page {
+  img {
+    border-radius: var(--size-medium);
+    box-shadow: var(--shadow);
+
+    max-height:30vh;
+    object-fit: cover;
+    object-position: center;
+  }
+}

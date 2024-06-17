@@ -1,0 +1,16 @@
+fragment PostImage on Asset {
+  url
+}
+
+query Project($id: String!) {
+  project(id: $id) {
+    title
+    description
+    image {
+      ...PostImage
+    }
+    sys {
+      id
+    }
+  }
+}

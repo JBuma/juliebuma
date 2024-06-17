@@ -582,6 +582,16 @@ export type PostsQuery = { __typename?: 'Query', projectCollection?: { __typenam
         & PostImageFragment
       ) | null, sys: { __typename?: 'Sys', id: string } } | null> } | null };
 
+export type ProjectQueryVariables = Exact<{
+  id: Scalars['String']['input'];
+}>;
+
+
+export type ProjectQuery = { __typename?: 'Query', project?: { __typename?: 'Project', title?: string | null, description?: string | null, image?: (
+      { __typename?: 'Asset' }
+      & PostImageFragment
+    ) | null, sys: { __typename?: 'Sys', id: string } } | null };
+
 export const PostImageFragmentDoc = gql`
     fragment PostImage on Asset {
   url
@@ -604,6 +614,20 @@ export const PostsDocument = gql`
   }
 }
     ${PostImageFragmentDoc}`;
+export const ProjectDocument = gql`
+    query Project($id: String!) {
+  project(id: $id) {
+    title
+    description
+    image {
+      ...PostImage
+    }
+    sys {
+      id
+    }
+  }
+}
+    ${PostImageFragmentDoc}`;
 
 export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string, operationType?: string, variables?: any) => Promise<T>;
 
@@ -614,6 +638,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
   return {
     Posts(variables?: PostsQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<PostsQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<PostsQuery>(PostsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'Posts', 'query', variables);
+    },
+    Project(variables: ProjectQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<ProjectQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<ProjectQuery>(ProjectDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'Project', 'query', variables);
     }
   };
 }
