@@ -2,16 +2,14 @@ import { CodegenConfig } from "@graphql-codegen/cli";
 
 require("dotenv").config();
 
-console.log(process.env.CONTENTFUL_KEY);
-
 const endpointOverride = process.env.CONTENTFUL_GRAPHQL_ENDPOINT;
 const spaceID = "vxfcs45w12a4";
 const contentfulEnvironment = process.env.CONTENTFUL_ENV ?? "master";
 const productionEndpoint = "https://graphql.contentful.com/content/v1/spaces";
 export const endpoint = `${
   endpointOverride || productionEndpoint
-  }/${spaceID}/environments/${contentfulEnvironment}`;
-console.log(endpoint)
+}/${spaceID}/environments/${contentfulEnvironment}`;
+
 export const config: CodegenConfig = {
   overwrite: true,
   ignoreNoDocuments: true,
