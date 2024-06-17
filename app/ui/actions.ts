@@ -5,7 +5,7 @@ export async function onSubmit(previous, data: FormData) {
   }
 
   const name = data.get("name");
-  const message = data.get("contact-message");
+  const message = data.get("message");
   const email = data.get("email");
 
   const api_key = process.env.RESEND_KEY;
@@ -14,7 +14,7 @@ export async function onSubmit(previous, data: FormData) {
     from: "contact@juliebuma.com",
     to: "juliebuma@gmail.com",
     subject: `Message from ${name}`,
-    html: `<p>${message}</p><p>From: ${email}</p>`,
+    html: `<p>${message}</p><p>From: ${name}, ${email}</p>`,
   };
 
   const result = await fetch("https://api.resend.com/emails", {

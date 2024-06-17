@@ -2,6 +2,8 @@
 import { useFormState } from "react-dom";
 import { SubmitButton } from "../../src/components/form/SubmitButton";
 import { onSubmit } from "./actions";
+import { Input } from "../../src/components/form/Input";
+import { TextArea } from "../../src/components/form/TextArea";
 
 export function Contact() {
   const [state, action] = useFormState(onSubmit, {});
@@ -10,29 +12,9 @@ export function Contact() {
     state.message
   ) : (
     <form name="contact" className="container column gap-small" action={action}>
-      <div className="input">
-        <label htmlFor="contact-name">Name</label>
-        <input id="contact-name" type="text" name="name" placeholder="Name" />
-      </div>
-      <div className="input">
-        <label htmlFor="contact-email">Email</label>
-        <input
-          id="contact-email"
-          type="email"
-          name="email"
-          placeholder="Email"
-        />
-      </div>
-      <div className="input">
-        <label htmlFor="contact-message">Message</label>
-        <textarea
-          name="contact-message"
-          id="message"
-          cols={30}
-          rows={3}
-          placeholder="Message"
-        ></textarea>
-      </div>
+      <Input label="Name" id="contact-name" name="name" />
+      <Input label="Email" id="contact-email" name="email" />
+      <TextArea label="Message" id="message" name="message" />
 
       <div hidden>
         <label htmlFor="notforhuman">Don't fill this in</label>
