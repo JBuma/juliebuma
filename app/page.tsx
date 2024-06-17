@@ -1,5 +1,7 @@
 import { ProjectList } from "./projects/ui/ProjectList";
 
+export const revalidate = 360;
+
 export default function Page() {
   async function onSubmit(data: FormData) {
     "use server";
@@ -32,11 +34,7 @@ export default function Page() {
 
   return (
     <>
-      <div
-        style={{ flexGrow: 1 }}
-        id="intro"
-        className="container column"
-      >
+      <div style={{ flexGrow: 1 }} id="intro" className="container column">
         <section className="container column">
           <h1>Julie Buma</h1>
           <h3>Frontend Developer</h3>

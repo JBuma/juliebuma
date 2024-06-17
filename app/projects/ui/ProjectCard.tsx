@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Asset, PostImageFragment } from "../../../src/lib/__generated/sdk";
+import {  PostImageFragment } from "../../../src/lib/__generated/sdk";
 import "./projectCard.css";
 
 interface ProjectCardProps {
