@@ -4,8 +4,8 @@
 @import url("./styles/form.css");
 
 @font-face {
-    font-family: InstrumentSerif;
-    src: url("~/public/InstrumentSerif-Regular.otf");
+  font-family: InstrumentSerif;
+  src: url("~/public/InstrumentSerif-Regular.otf");
 }
 
 html {
@@ -23,11 +23,13 @@ body {
 h1,
 h2,
 h3 {
-  font-family: InstrumentSerif, Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: InstrumentSerif, Cambria, Cochin, Georgia, Times,
+    "Times New Roman", serif;
 }
 
 .container {
   display: flex;
+  gap: var(--size-small);
 
   &.gap-small {
     gap: var(--size-small);
@@ -35,6 +37,18 @@ h3 {
 
   &.gap-medium {
     gap: var(--size-medium);
+  }
+
+  &.gap-large {
+    gap: var(--size-large);
+  }
+
+  &.gap-xlarge {
+    gap: var(--size-xlarge);
+  }
+
+  &.gap-xxlarge {
+    gap: var(--size-xxlarge);
   }
 
   &.centered {
@@ -56,6 +70,7 @@ h3 {
   margin: 0 auto;
   width: auto;
   min-width: 50%;
+  gap: var(--size-medium);
 
   h1 {
     font-size: 3em;
@@ -67,6 +82,15 @@ h3 {
     color: var(--black);
     font-weight: lighter;
   }
+}
+
+.page {
+  align-items: stretch;
+  margin: 0 max(15vw, var(--size-small));
+  width: auto;
+  min-width: 50%;
+
+  gap: var(--size-xlarge);
 }
 
 .squiggly {

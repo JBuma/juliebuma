@@ -1,0 +1,19 @@
+fragment PostImage on Asset{
+  url
+}
+
+query Posts {
+  projectCollection {
+    total
+    items {
+      title
+      description
+      image {
+        ...PostImage
+      }
+      sys{
+        id
+      }
+    }
+  }
+}

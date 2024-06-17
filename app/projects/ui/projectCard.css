@@ -1,0 +1,63 @@
+.project-card {
+  &.wrapper {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    @media (min-width: 800px) {
+      grid-template-rows: 1fr var(--size-medium) 1fr var(--size-medium);
+      grid-template-areas:
+        "image ."
+        "image title"
+        "image description"
+        ". description";
+      gap: var(--size-medium);
+
+      &:nth-child(2n) {
+        grid-template-columns: 2fr 3fr;
+
+        grid-template-areas:
+          ". image"
+          "title image"
+          "description image"
+          "description .";
+      }
+    }
+
+    @media (max-width: 800px) {
+      & {
+        grid-template-columns: 1fr;
+        grid-template-rows: minmax(100px, 400px) var(--size-medium) 1fr var(
+            --size-medium
+          );
+        grid-template-areas:
+          "image"
+          "title"
+          "description"
+          ".";
+      }
+    }
+
+    min-height: 400px;
+    max-height: 400px;
+  }
+
+  .title {
+    font-size: var(--size-large);
+    grid-area: title;
+  }
+
+  .description {
+    grid-area: description;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .image {
+    grid-area: image;
+
+    background-size: cover;
+    background-position: center;
+
+    border-radius: var(--size-small);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  }
+}

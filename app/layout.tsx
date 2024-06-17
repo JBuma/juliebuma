@@ -32,7 +32,7 @@ export default function RootLayout({
             </g>
           </svg>
         </div>
-        {children}
+        <main className="page container column">{children}</main>
         <div className="container row" style={{ overflow: "hidden" }}>
           <svg
             style={{ transform: "rotateZ(180deg)" }}
