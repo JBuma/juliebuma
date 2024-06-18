@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: minmax(auto, 3fr) 2fr;
     @media (min-width: 800px) {
-      grid-template-rows: minmax(75px, 1fr) auto 1fr var(--size-medium);
+      grid-template-rows: minmax(75px, 1fr) auto auto var(--size-medium);
       grid-template-areas:
         "image ."
         "image title"
@@ -25,15 +25,13 @@
     @media (max-width: 800px) {
       & {
         grid-template-columns: 1fr;
-        grid-template-rows: minmax(200px, 1fr) auto auto;
+        grid-template-rows: minmax(auto, 1fr) auto auto;
         grid-template-areas:
           "image"
           "title"
           "description";
       }
     }
-    /* height: 30vh; */
-    /* max-height: 400px; */
   }
 
   .title {
@@ -45,8 +43,7 @@
   .description {
     grid-area: description;
     overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 6;
+    -webkit-line-clamp: 8;
     -webkit-box-orient: vertical;
     display: -webkit-box;
   }
