@@ -1,11 +1,11 @@
 "use server";
 export async function onSubmit(previous, data: FormData) {
-  if (data.get("notforhuman") !== "") {
+  if (data.get("message") !== "") {
     return;
   }
 
   const name = data.get("name");
-  const message = data.get("message");
+  const message = data.get("messageForHuman");
   const email = data.get("email");
 
   const api_key = process.env.RESEND_KEY;

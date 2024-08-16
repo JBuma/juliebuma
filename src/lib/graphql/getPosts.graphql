@@ -7,6 +7,7 @@ query Posts {
     total
     items {
       title
+      
       description
       image {
         ...PostImage

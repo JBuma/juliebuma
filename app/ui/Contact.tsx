@@ -13,15 +13,15 @@ export function Contact() {
   ) : (
     <form name="contact" className="container column gap-small" action={action}>
       <Input label="Name" id="contact-name" name="name" />
-      <Input label="Email" id="contact-email" name="email" />
-      <TextArea label="Message" id="message" name="message" />
+      <Input label="Email" type="email" id="contact-email" name="email" />
+      <TextArea label="Message" id="humanMessage" name="messageForHuman" />
 
       <div hidden>
-        <label htmlFor="notforhuman">Don't fill this in</label>
+        <label htmlFor="message">Don't fill this in</label>
         <input
-          id="notforhuman"
+          id="message"
           type="text"
-          name="notforhuman"
+          name="message"
           placeholder="do not fill"
         />
       </div>
