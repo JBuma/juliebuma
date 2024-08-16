@@ -16,7 +16,7 @@ export function Contact() {
       <Input label="Email" type="email" id="contact-email" name="email" />
       <TextArea label="Message" id="humanMessage" name="messageForHuman" />
 
-      <div hidden>
+      <div style={{width:1, height:1, overflow:'hidden', position:'absolute', zIndex:-1, clipPath:'inset(0 0 0 0)'}}>
         <label htmlFor="message">Don't fill this in</label>
         <input
           id="message"
