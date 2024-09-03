@@ -1,5 +1,6 @@
 "use server";
 export async function onSubmit(previous, data: FormData) {
+  return;
   if (data.get("message") !== "") {
     return;
   }
